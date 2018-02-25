@@ -97,6 +97,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Search Maps',
         link: '/pages/maps/searchmap',
       },
+      {
+        title: 'Vector Maps',
+        link: '/pages/maps/vector',
+      },
     ],
   },
   {
