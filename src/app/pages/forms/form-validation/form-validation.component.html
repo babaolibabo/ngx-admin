@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-lg-12">
+  <form [formGroup]="form">
+	<nb-card>-
+	  <nb-card-header>Form validation</nb-card-header>
+		<nb-card-body> 
+			<div>
+				<small style="color:red;" *ngIf="form.controls['fname'].hasError('required') && form.controls['fname'].touched" >You must include a first name.</small>
+				<small style="color:red;" *ngIf="form.controls['fname'].hasError('minlength') && form.controls['fname'].touched" >Your first name must be at least 5 characters long.</small>
+				<small style="color:red;" *ngIf="form.controls['fname'].hasError('maxlength') && form.controls['fname'].touched" >Your first name cannot exceed 10 characters.</small>
+				<div class="input-group">
+					<input  placeholder="First name" [formControl]="form.controls['fname']" required class="form-control">
+				</div>
+			</div>
+			<div>
+				<small style="color:red;" *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched" >You must include an email address.</small>
+				<small style="color:red;" *ngIf="form.controls['email'].errors?.email && form.controls['email'].touched" >You must include a valid email address.</small>
+			    <div class="input-group">
+				  <input  placeholder="Email address" [formControl]="form.controls['email']" type="email" required class="form-control">
+				</div>
+			</div>
+			<div>
+				<small style="color:red;" *ngIf="form.controls['url'].hasError('required') && form.controls['url'].touched" >You must include a web address.</small>
+				<small style="color:red;" *ngIf="form.controls['url'].errors?.url && form.controls['url'].touched" >You must include a valid web address.</small>
+			    <div class="input-group">
+				  <input  placeholder="Website address (http://nyasha.me)" [formControl]="form.controls['url']" type="url" required class="form-control">
+				</div>
+			</div>
+			<div>
+				<small style="color:red;" *ngIf="form.controls['date'].hasError('required') && form.controls['date'].touched" >You must include a date.</small>
+				<small style="color:red;" *ngIf="form.controls['date'].errors?.date && form.controls['date'].touched" >You must include a valid date.</small>
+			    <div class="input-group">
+				  <input  placeholder="Date" [formControl]="form.controls['date']" type="date" required class="form-control">
+				</div>
+			</div>
+			<div>
+				<small style="color:red;" *ngIf="form.controls['range'].hasError('required') && form.controls['range'].touched" >You must enter a number.</small>
+				<small style="color:red;" *ngIf="form.controls['range'].errors?.range && form.controls['range'].touched" >Number should be between 5 and 9.</small>
+			    <div class="input-group">
+				  <input  placeholder="Number range (between 5 and 9)" [formControl]="form.controls['range']" required class="form-control">
+				</div>
+			</div>
+			<div>
+				<small style="color:red;" *ngIf="form.controls['creditCard'].hasError('required') && form.controls['creditCard'].touched" >You must enter a credit card.</small>
+				<small style="color:red;" *ngIf="form.controls['creditCard'].errors?.creditCard && form.controls['creditCard'].touched" >You must enter a valid credit card number.</small>
+			    <div class="input-group">
+				  <input  placeholder="Credit card (4111 1111 1111 1111)" [formControl]="form.controls['creditCard']" required class="form-control">
+				</div>
+			</div>
+			<div>
+				<small style="color:red;" *ngIf="form.controls['phone'].hasError('required') && form.controls['phone'].touched" >You must include phone number.</small>
+				<small style="color:red;" *ngIf="form.controls['phone'].errors?.pattern && form.controls['phone'].touched" >You must include a valid phone number.</small>
+			    <div class="input-group">
+				  <input  placeholder="US Phone number (15417543010)" [formControl]="form.controls['phone']" type="text" pattern="(?:\d{3}-){2}\d{4}" required class="form-control">
+				</div>
+			</div>
+			<div>
+				<small style="color:red;" *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" >You must include password.</small>
+				<div class="input-group">
+					<input  placeholder="Password" [formControl]="form.controls['password']" type="password" required class="form-control">
+			    </div>
+			</div>
+			<div>
+				<small style="color:red;" *ngIf="form.controls['confirmPassword'].hasError('required') && form.controls['confirmPassword'].touched" >You must include confirm password.</small>
+				<small style="color:red;" *ngIf="form.controls['confirmPassword'].errors?.equalTo" >Passwords do not math.</small>
+			    <div class="input-group">
+				    <input  placeholder="Confirm Password" [formControl]="form.controls['confirmPassword']" type="password" required class="form-control">
+				</div>
+			</div>
+		</nb-card-body>
+	</nb-card>
+	</form>
+  </div>
+</div>

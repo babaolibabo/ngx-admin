@@ -62,6 +62,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Form Layouts',
         link: '/pages/forms/layouts',
       },
+	  {
+        title: 'Form Validation',
+        link: '/pages/forms/validation',
+      },
     ],
   },
   {
